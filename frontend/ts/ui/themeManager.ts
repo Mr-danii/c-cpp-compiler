@@ -10,11 +10,12 @@ import "codemirror/theme/ayu-dark.css";
 import "codemirror/theme/gruvbox-dark.css";
 import "codemirror/theme/seti.css";
 import "codemirror/theme/the-matrix.css";
+import "../../styles/themes/sunshine.css";
 
 const THEME_CONFIG = {
-  STORAGE_KEY: "cincout-theme",
-  DEFAULT_THEME: "default",
-  DEFAULT_RGB: "30, 136, 229",
+  STORAGE_KEY: "cppcompiler-theme",
+  DEFAULT_THEME: "sunshine",
+  DEFAULT_RGB: "249, 168, 37",
   HEX_REGEX: /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i,
 } as const;
 

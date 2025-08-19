@@ -1,4 +1,22 @@
 {
+  "sunshine": {
+    "name": "Sunshine",
+    "bg": "#fffdf7",
+    "bgSecondary": "#fff8e1",
+    "text": "#333333",
+    "textSecondary": "#6e6a57",
+    "accent": "#f9a825",
+    "accentHover": "#ff8f00",
+    "border": "#ffe082",
+    "terminal": {
+      "red": "#e53935",
+      "green": "#7cb342",
+      "yellow": "#fdd835",
+      "blue": "#039be5",
+      "magenta": "#d81b60",
+      "cyan": "#00acc1"
+    }
+  },
   "default": {
     "name": "Default",
     "bg": "#ffffff",

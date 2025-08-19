@@ -1,0 +1,109 @@
+/**
+ * Sunshine theme for CodeMirror
+ */
+
+.cm-s-sunshine.CodeMirror {
+  background-color: #fffdf7;
+  color: #333333;
+}
+
+.cm-s-sunshine .CodeMirror-gutters {
+  background: #fff8e1;
+  border-right: 1px solid #ffe082;
+}
+
+.cm-s-sunshine .CodeMirror-linenumber {
+  color: #6e6a57;
+}
+
+.cm-s-sunshine .CodeMirror-cursor {
+  border-left: 1px solid #f9a825;
+}
+
+.cm-s-sunshine .CodeMirror-selected {
+  background: rgba(249, 168, 37, 0.2);
+}
+
+.cm-s-sunshine .CodeMirror-line::selection,
+.cm-s-sunshine .CodeMirror-line > span::selection,
+.cm-s-sunshine .CodeMirror-line > span > span::selection {
+  background: rgba(249, 168, 37, 0.2);
+}
+
+.cm-s-sunshine .cm-keyword {
+  color: #d81b60;
+}
+
+.cm-s-sunshine .cm-operator {
+  color: #ff8f00;
+}
+
+.cm-s-sunshine .cm-variable-2 {
+  color: #039be5;
+}
+
+.cm-s-sunshine .cm-variable-3,
+.cm-s-sunshine .cm-type {
+  color: #00acc1;
+}
+
+.cm-s-sunshine .cm-builtin {
+  color: #f9a825;
+}
+
+.cm-s-sunshine .cm-atom {
+  color: #7cb342;
+}
+
+.cm-s-sunshine .cm-number {
+  color: #ff8f00;
+}
+
+.cm-s-sunshine .cm-def {
+  color: #039be5;
+}
+
+.cm-s-sunshine .cm-string {
+  color: #7cb342;
+}
+
+.cm-s-sunshine .cm-string-2 {
+  color: #7cb342;
+}
+
+.cm-s-sunshine .cm-comment {
+  color: #6e6a57;
+}
+
+.cm-s-sunshine .cm-variable {
+  color: #333333;
+}
+
+.cm-s-sunshine .cm-tag {
+  color: #d81b60;
+}
+
+.cm-s-sunshine .cm-meta {
+  color: #039be5;
+}
+
+.cm-s-sunshine .cm-attribute {
+  color: #f9a825;
+}
+
+.cm-s-sunshine .cm-property {
+  color: #039be5;
+}
+
+.cm-s-sunshine .cm-qualifier {
+  color: #7cb342;
+}
+
+.cm-s-sunshine .cm-error {
+  color: #e53935;
+}
+
+.cm-s-sunshine .CodeMirror-matchingbracket {
+  color: #7cb342 !important;
+  text-decoration: underline;
+}

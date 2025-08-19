@@ -485,7 +485,12 @@ export class CodeProcessingService implements ICodeProcessingService {
           exitCode: error ? error.code || 1 : 0,
         };
 
-        resolve(result);
+       resolve({
+  stdout: result.stdout.toString(),
+  stderr: result.stderr.toString(),
+  exitCode: result.exitCode,
+});
+
       });
     });
   }

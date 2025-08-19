@@ -17,16 +17,21 @@ export default defineConfig(async () => {
     // Add Tailwind CSS plugin
     plugins: [tailwindcss()],
 
+    // 🔑 Expose dev server to Docker
+    server: {
+      host: "0.0.0.0", // allow connections from outside container
+      port: 5173,      // keep vite inside at 5173
+      strictPort: true // fail if port is taken, don’t auto-switch
+    },
+
     // Build options
     build: {
       outDir: "dist",
       emptyOutDir: true,
       chunkSizeWarningLimit: 800, // Increase chunk size warning limit
-      // Output files
       rollupOptions: {
         input: path.resolve(__dirname, "index.html"),
         output: {
-          // chunk files
           manualChunks: {
             vendor: [
               "codemirror",
@@ -38,6 +43,7 @@ export default defineConfig(async () => {
         },
       },
     },
+
     // Resolve assets from node_modules
     resolve: {
       alias: {
