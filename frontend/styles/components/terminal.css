@@ -8,15 +8,17 @@
 @import "@xterm/xterm/css/xterm.css";
 
 .terminal-container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  border-radius: var(--radius-sm);
-  padding: var(--spacing-xs);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #0f172a;
+  border-radius: var(--radius-xs);
+  overflow: auto;
+  position: relative;
+  max-height: 400px;
   box-sizing: border-box;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 500;
 }
 
 /* Base xterm styling */
@@ -29,13 +31,15 @@
 .xterm-screen,
 .xterm-rows,
 .xterm-rows > div {
-  color: var(--text-primary) !important;
+  color: #10b981 !important;
+  background-color: #0f172a !important;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 500;
 }
 
 .xterm-viewport {
   width: 100% !important;
-  background-color: var(--bg-primary) !important;
+  background-color: #0f172a !important;
   transition: background-color 0.3s ease !important;
 
   /* Hide scrollbars across browsers */
@@ -55,23 +59,23 @@
 
 /* Terminal cursor styling */
 .xterm-cursor-outline {
-  border-color: var(--accent) !important;
-  box-shadow: var(--shadow-accent-sm) !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 0 4px rgba(16, 185, 129, 0.3) !important;
 }
 
 .xterm-selection {
-  background-color: var(--accent) !important;
+  background-color: #10b981 !important;
   opacity: 0.3;
-  box-shadow: var(--shadow-accent-sm) !important;
+  box-shadow: 0 0 4px rgba(16, 185, 129, 0.3) !important;
 }
 
 /* Consistent cursor blinking behavior */
 .xterm.focus .xterm-cursor,
 .xterm .xterm-cursor,
 .xterm-cursor.xterm-cursor-blink {
-  background-color: var(--accent) !important;
-  color: var(--bg-primary) !important;
-  box-shadow: var(--shadow-accent-md) !important;
+  background-color: #10b981 !important;
+  color: #0f172a !important;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5) !important;
   animation: cursor-blink 1s step-end infinite !important;
 }
 
@@ -79,8 +83,8 @@
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.5),
-      0 0 2px rgba(var(--accent-rgb), 0.8) !important;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.5),
+      0 0 2px rgba(16, 185, 129, 0.8) !important;
   }
   50% {
     opacity: 0;

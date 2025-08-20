@@ -9,7 +9,7 @@
 
 .cm-s-sunshine .CodeMirror-gutters {
   background: #fff8e1;
-  border-right: 1px solid #ffe082;
+  border-right: 1px solid #FFD700;
 }
 
 .cm-s-sunshine .CodeMirror-linenumber {
@@ -17,17 +17,17 @@
 }
 
 .cm-s-sunshine .CodeMirror-cursor {
-  border-left: 1px solid #f9a825;
+  border-left: 1px solid #FFD700;
 }
 
 .cm-s-sunshine .CodeMirror-selected {
-  background: rgba(249, 168, 37, 0.2);
+  background: rgba(255, 215, 0, 0.2);
 }
 
 .cm-s-sunshine .CodeMirror-line::selection,
 .cm-s-sunshine .CodeMirror-line > span::selection,
 .cm-s-sunshine .CodeMirror-line > span > span::selection {
-  background: rgba(249, 168, 37, 0.2);
+  background: rgba(255, 215, 0, 0.2);
 }
 
 .cm-s-sunshine .cm-keyword {
@@ -35,7 +35,7 @@
 }
 
 .cm-s-sunshine .cm-operator {
-  color: #ff8f00;
+  color: #FFA500;
 }
 
 .cm-s-sunshine .cm-variable-2 {
@@ -48,7 +48,7 @@
 }
 
 .cm-s-sunshine .cm-builtin {
-  color: #f9a825;
+  color: #FFD700;
 }
 
 .cm-s-sunshine .cm-atom {
@@ -56,7 +56,7 @@
 }
 
 .cm-s-sunshine .cm-number {
-  color: #ff8f00;
+  color: #FFA500;
 }
 
 .cm-s-sunshine .cm-def {
@@ -88,7 +88,7 @@
 }
 
 .cm-s-sunshine .cm-attribute {
-  color: #f9a825;
+  color: #FFD700;
 }
 
 .cm-s-sunshine .cm-property {

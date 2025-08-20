@@ -5,7 +5,7 @@
     <title>C/C++ COMPILER</title>
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Fira+Code:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Fira+Code:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -27,14 +27,23 @@
 
   <body>
     <div class="app-root">
-      <div class="header">
-        <div>
-          <h1 id="title-easter-egg">
-            <i class="devicon-c-plain"></i>
-            <i class="devicon-cplusplus-plain"></i> C/C++ COMPILER
-          </h1>
+      <!-- Main Title Section -->
+      <div class="header-section">
+        <h1 class="main-title" id="title-easter-egg">
+          <i class="devicon-c-plain"></i>
+          <i class="devicon-cplusplus-plain"></i> C/C++ Compiler
+        </h1>
+        <p class="subtitle">
+          Code, compile, and execute C/C++ programs right in your browser - no installation required!
+        </p>
+      </div>
 
-          <div class="dropdown" id="learn-dropdown">
+      <!-- Compiler Interface Container -->
+      <div class="compiler-interface">
+        <div class="header">
+        <div>
+
+          <!-- <div class="dropdown" id="learn-dropdown">
             <button class="dropdown-btn">
               <i class="fas fa-book"></i> Learn
               <i class="fas fa-chevron-down"></i>
@@ -65,7 +74,7 @@
                 <i class="fas fa-laptop-code resource-icon"></i> Hacking Cpp
               </a>
             </div>
-          </div>
+          </div> -->
 
           <div id="shortcuts-panel" class="shortcuts-panel dropdown">
             <button class="dropdown-btn">
@@ -87,9 +96,9 @@
           <select id="language"></select>
           <!-- <select id="compiler"></select>
           <select id="optimization"></select>
-          <select id="template"></select>
           <select id="theme-select"></select> -->
-          <div
+          <select id="template"></select>
+          <!-- <div
             class="flex items-center px-2 py-1 bg-[var(--bg-secondary)] rounded-[var(--radius-sm)] border border-[var(--border)] transition-all duration-300 shadow-[var(--shadow-sm)] gap-2 h-[var(--btn-height)] shrink-0"
           >
             <div class="flex items-center gap-1">
@@ -110,7 +119,7 @@
                 class="absolute cursor-pointer inset-0 bg-[var(--bg-primary)] rounded-[var(--radius-md)] border border-[var(--border)] transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] before:absolute before:content-[''] before:h-[12px] before:w-[12px] before:left-[2px] before:bottom-[2px] before:bg-[var(--text-primary)] before:rounded-full before:transition-all before:duration-300 before:ease-[cubic-bezier(0.175,0.885,0.32,1.275)] before:shadow-[0_1px_2px_rgba(0,0,0,0.3)] peer-checked:bg-[var(--accent)] peer-checked:shadow-[var(--shadow-accent-sm),inset_0_0_4px_rgba(0,0,0,0.2)] peer-checked:before:translate-x-[16px] peer-checked:before:shadow-[var(--shadow-sm)] peer-checked:before:bg-white"
               ></span>
             </label>
-          </div>
+          </div> -->
 
           <!-- GitHub icon removed -->
         </div>
@@ -131,24 +140,24 @@
                 <i class="fas fa-play"></i> Compile & Run
               </button>
               <button id="debug"><i class="fas fa-bug"></i> Debug</button>
-              <button id="viewAssembly">
+              <!-- <button id="viewAssembly">
                 <i class="fas fa-cogs"></i> Assembly
-              </button>
-              <button id="memcheck">
+              </button> -->
+              <!-- <button id="memcheck">
                 <i class="fas fa-memory"></i> Detect Leaks
-              </button>
-              <button id="syscall">
+              </button> -->
+              <!-- <button id="syscall">
                 <i class="fas fa-exchange-alt"></i> Syscalls
-              </button>
+              </button> -->
             </div>
-            <div class="button-container right-aligned">
+            <!-- <div class="button-container right-aligned">
               <button id="codeSnap">
                 <i class="fas fa-camera"></i> Code Snap
               </button>
               <button id="zenMode">
                 <i class="fas fa-expand"></i> Zen Mode
               </button>
-            </div>
+            </div> -->
           </div>
           <textarea id="code"></textarea>
           <div
@@ -157,17 +166,19 @@
           ></div>
         </div>
 
-        <!-- Output panel (hidden initially) -->
+        <!-- Output panel (visible by default) -->
         <div class="panel output-panel" id="outputPanel">
           <div class="panel-header">
             <div class="button-container">
-              <button id="closeOutput">
+              <!-- Close button commented out - panel stays visible by default -->
+              <!-- <button id="closeOutput">
                 <i class="fas fa-times"></i> Close
-              </button>
+              </button> -->
             </div>
           </div>
           <div id="output"></div>
         </div>
+      </div>
       </div>
     </div>
 

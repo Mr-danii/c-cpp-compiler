@@ -4,15 +4,19 @@
  */
 
 #output {
-  height: 100%;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  flex: 1;
+  padding: var(--spacing-xs);
   font-family: var(--font-mono);
-  font-size: var(--font-sm);
-  padding: 6px;
+  font-size: 0.85em;
+  line-height: 1.4;
   white-space: pre-wrap;
-  overflow-y: auto;
-  border-radius: var(--radius-sm);
+  word-wrap: break-word;
+  background: #0f172a;
+  color: #10b981;
+  border-radius: var(--radius-xs);
+  overflow: auto;
+  max-height: 350px;
+  font-weight: 500;
 }
 
 /* Terminal loading indicator */

@@ -5,9 +5,9 @@
     "bgSecondary": "#fff8e1",
     "text": "#333333",
     "textSecondary": "#6e6a57",
-    "accent": "#f9a825",
-    "accentHover": "#ff8f00",
-    "border": "#ffe082",
+    "accent": "#FFD700",
+    "accentHover": "#FFA500",
+    "border": "#FFD700",
     "terminal": {
       "red": "#e53935",
       "green": "#7cb342",

@@ -353,10 +353,11 @@ export const initApp = () => {
       debugSocketManager.startDebugSession(domUtils.getCompileOptions());
     });
 
-    elements.closeOutput?.addEventListener("click", () => {
-      socketManager.cleanupSession();
-      domUtils.hideOutputPanel();
-    });
+    // Close output functionality commented out - panel stays visible by default
+    // elements.closeOutput?.addEventListener("click", () => {
+    //   socketManager.cleanupSession();
+    //   domUtils.hideOutputPanel();
+    // });
 
     addDebouncedHandler(elements.viewAssembly, () => {
       codeActions.viewAssembly(domUtils.getCompileOptions());
@@ -424,9 +425,12 @@ export const initApp = () => {
     initSelects();
     initEditors();
 
-    // Step 3: Hide output panel initially
+    // Step 3: Show output panel by default
     const outputPanel = document.getElementById("outputPanel");
-    if (outputPanel) outputPanel.style.display = "none";
+    if (outputPanel) {
+      outputPanel.style.display = "flex";
+      document.querySelector(".editor-panel")?.classList.add("with-output");
+    }
 
     // Step 4: Initialize shortcuts system
     initializeShortcuts();

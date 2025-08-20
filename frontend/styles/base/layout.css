@@ -3,6 +3,101 @@
  * Styles for overall application layout structure
  */
 
+/* Header section styles */
+.header-section {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.main-title {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 25%, #FFD700 50%, #FFA500 75%, #FFD700 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  position: relative;
+  animation: gradientShift 4s ease-in-out infinite, titleGlow 3s ease-in-out infinite alternate;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes titleGlow {
+  from {
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+    transform: scale(1);
+  }
+  to {
+    filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.6));
+    transform: scale(1.02);
+  }
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: #64748b;
+  margin-bottom: 40px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Compiler Interface Container */
+.compiler-interface {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 215, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.compiler-interface::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    #FFD700 0%,
+    #FFA500 25%,
+    #FFD700 50%,
+    #FFA500 75%,
+    #FFD700 100%);
+  background-size: 200% 100%;
+  animation: shimmerFlow 3s linear infinite;
+}
+
+@keyframes shimmerFlow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 /* Header styles */
 .header {
   display: flex;
@@ -10,10 +105,10 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: var(--spacing-md);
-  background: var(--bg-secondary);
-  padding: var(--spacing-sm);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
   gap: var(--spacing-sm);
 }
 
@@ -24,7 +119,7 @@
   flex-wrap: wrap;
 }
 
-/* Title styles */
+/* Old title styles - kept for backwards compatibility */
 h1 {
   font-family: var(--font-mono);
   font-weight: bold;
@@ -67,15 +162,28 @@ h1 {
 
 /* Panel styles */
 .panel {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
   padding: var(--spacing-xs);
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 215, 0, 0.2);
   overflow: hidden;
   flex: 1 1 0;
   min-height: 0;
+  transition: all 0.3s ease;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.08),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 215, 0, 0.2);
 }
 
 /* Editor and output panels */
@@ -86,7 +194,13 @@ h1 {
 
 .editor-panel {
   position: relative;
-  flex: 1;
+  flex: 0 0 55%;
+  max-width: 55%;
+}
+
+.output-panel {
+  flex: 0 0 45%;
+  max-width: 45%;
 }
 
 .editor-panel.with-output {
@@ -105,8 +219,9 @@ h1 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: var(--spacing-xs);
-  padding: 2px 6px;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-secondary);
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   overflow: hidden;
+  gap: 12px;
 }

@@ -6,19 +6,30 @@
 @import "codemirror/lib/codemirror.css";
 @import "codemirror/addon/fold/foldgutter.css";
 
-.CodeMirror {
+.cm-editor {
   height: 100%;
-  border-radius: var(--radius-sm);
-  font-size: var(--font-sm);
+  max-height: 400px;
   font-family: var(--font-mono);
-  overflow-y: hidden;
-  transition: font-size var(--transition-fast);
+  font-size: 0.9em;
+  line-height: 1.5;
+  border-radius: var(--radius-xs);
+  overflow: auto;
+}
+
+.cm-scroller {
+  overflow: auto !important;
+  max-height: 400px;
+}
+
+.cm-content {
+  overflow: visible;
 }
 
 .zen-mode-active {
   overflow: hidden;
 }
 
+.zen-mode-active .cm-editor,
 .zen-mode-active .CodeMirror {
   position: fixed;
   inset: 0;
