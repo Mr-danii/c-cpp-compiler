@@ -98,6 +98,7 @@ function startWorker() {
       crossOriginEmbedderPolicy: false,
       crossOriginOpenerPolicy: false,
       crossOriginResourcePolicy: { policy: "cross-origin" },
+      frameguard: false, // Allow iframe embedding
     })
   );
 

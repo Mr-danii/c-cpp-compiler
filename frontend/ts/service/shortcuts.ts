@@ -93,9 +93,6 @@ const editorActions = {
   },
 };
 
-const viewActions = {
-  toggleZenMode: () => clickElement(DomElementId.ZEN_MODE),
-};
 
 // Create shortcut configuration
 const createShortcuts = (): ShortcutCategories => {
@@ -116,29 +113,10 @@ const createShortcuts = (): ShortcutCategories => {
       description: "Open code from file",
       displayKeys: isMac ? ["⌘", "O"] : ["Ctrl", "O"],
     },
-    [`${cmd}+k`]: {
-      action: editorActions.toggleCodeFolding,
-      description: "Toggle code folding",
-      displayKeys: isMac ? ["⌘", "K"] : ["Ctrl", "K"],
-    },
-    [`${cmd}+p`]: {
-      action: uiActions.takeCodeSnapshot,
-      description: "Take code snapshot",
-      displayKeys: isMac ? ["⌘", "P"] : ["Ctrl", "P"],
-    },
-    [`${cmd}+shift+z`]: {
-      action: viewActions.toggleZenMode,
-      description: "Zen Mode",
-      displayKeys: isMac ? ["⌘", "⇧", "Z"] : ["Ctrl", "Shift", "Z"],
-    },
   };
   const numberPairs: { action: () => void; description: string }[] = [
-    { action: uiActions.viewAssembly, description: "View assembly code" },
     { action: uiActions.formatCode, description: "Format code" },
     { action: uiActions.lintCode, description: "Lint code" },
-    { action: uiActions.memoryCheck, description: "Memory check" },
-    { action: uiActions.debug, description: "Debug with GDB" },
-    { action: uiActions.syscallTrace, description: "Trace system calls" },
   ];
   const mac: Record<string, ShortcutDefinition> = {},
     other: Record<string, ShortcutDefinition> = {};
@@ -149,13 +127,7 @@ const createShortcuts = (): ShortcutCategories => {
     mac[`ctrl+${n}`] = { action, description, displayKeys: ["^", `${n}`] };
     other[`alt+${n}`] = { action, description, displayKeys: ["Alt", `${n}`] };
   });
-  const special = {
-    Escape: {
-      action: () => uiActions.closeOutputPanel(),
-      description: "Close output panel",
-      displayKeys: ["Esc"],
-    },
-  };
+  const special = {};
   return { common, mac, other, special };
 };
 
